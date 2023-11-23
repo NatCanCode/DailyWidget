@@ -78,11 +78,13 @@ struct DailyWidgetEntryView : View {
                     Text(config.quote)
                         .font(.system(size: 10))
                         .foregroundColor(.white)
+                        .fontWeight(.bold)
                         .padding(-18)
                 }
                 Text("-\(config.author)")
                 .font(.system(size: 10))
                 .foregroundColor(.white)
+                .fontWeight(.bold)
                 .padding(.top, -4)
             }
             .padding()
@@ -131,5 +133,6 @@ extension Date {
     DailyWidget()
 } timeline: {
     DayEntry(date: .now, configuration: .smiley)
-    DayEntry(date: .distantPast, configuration: .starEyes)
+    DayEntry(date: .distantPast, configuration: .init())
+    DayEntry(date: .distantFuture, configuration: .starEyes)
 }
